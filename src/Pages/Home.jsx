@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import {singleProductData} from '../slices/ProductSlice'
 
 const Home = () => {
 
     const[productData, setProductData]=useState([])
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
 
     useEffect(()=>{
@@ -13,6 +18,12 @@ const Home = () => {
     },[])
     
     console.log(productData)
+    const handleShow=(item)=>{
+        navigate('/data')
+        // console.log(item )
+        dispatch(singleProductData(item))
+
+    }
 
   return (
     <>
@@ -38,7 +49,7 @@ const Home = () => {
                         <hr />
                         <h4 className='mt-5 mb-2 text-[20px] font-bold text-[#FF7F3E] text-center'>Price: {item.price} </h4>
                         <button className='w-full h-[40px] flex justify-center items-center bg-[#BBE9FF] rounded-lg font-bold'>Buy Now</button>
-                        <button className='w-full h-[40px] flex justify-center items-center bg-[#B1AFFF] rounded-lg font-bold mt-2'>View details</button>
+                        <button onClick={()=>handleShow(item)} className='w-full h-[40px] flex justify-center items-center bg-[#B1AFFF] rounded-lg font-bold mt-2'>View details</button>
                     </div>                    
                 </div>  
 
