@@ -17,12 +17,17 @@ const Home = () => {
         .catch((err)=> console.log(err))
     },[])
     
-    console.log(productData)
+    // console.log(productData)
+
     const handleShow=(item)=>{
         navigate('/data')
         // console.log(item )
         dispatch(singleProductData(item))
+    }
 
+    const handleBuy=(item)=>{
+        navigate('/buy')
+        dispatch(singleProductData(item))
     }
 
   return (
@@ -48,7 +53,7 @@ const Home = () => {
                         </ul>
                         <hr />
                         <h4 className='mt-5 mb-2 text-[20px] font-bold text-[#FF7F3E] text-center'>Price: {item.price} </h4>
-                        <button className='w-full h-[40px] flex justify-center items-center bg-[#BBE9FF] rounded-lg font-bold'>Buy Now</button>
+                        <button onClick={()=>handleBuy(item)} className='w-full h-[40px] flex justify-center items-center bg-[#BBE9FF] rounded-lg font-bold'>Buy Now</button>
                         <button onClick={()=>handleShow(item)} className='w-full h-[40px] flex justify-center items-center bg-[#B1AFFF] rounded-lg font-bold mt-2'>View details</button>
                     </div>                    
                 </div>  
