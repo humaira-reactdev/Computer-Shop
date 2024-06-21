@@ -1,8 +1,18 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Data = () => {
 
+    const navigate=useNavigate()
+
+    const handleSeeMore=()=>{
+        navigate('/')
+    }
+
+    const handleBuy=()=>{
+        navigate('/buy')
+    }
     const data=useSelector((state)=>state.counter.value)
     // console.log(data)
     
@@ -24,7 +34,12 @@ const Data = () => {
                             <li>Storage: {data.storage} </li>
                             <li>Display: {data.display_type} </li>
                         </ul>
-                        <h2 className='text-3xl font-bold italic mt-5 text-[#FFA62F]'>Price: {data.price}</h2>
+                        <div className='flex gap-10'>
+                            <h2 className='text-3xl font-bold italic mt-5 text-[#FFA62F]'>Price: {data.price}</h2>
+                            <button onClick={handleBuy} className='bg-[#402E7A] font-semibold text-white p-3 rounded-lg'>Buy now</button>
+                            <button onClick={handleSeeMore} className='bg-[#402E7A] font-semibold text-white p-3 rounded-lg'>See more products</button>
+                        </div>
+                        
                     </div>
 
                 </div>

@@ -19,7 +19,7 @@ const Buy = () => {
 
   return (
     <>
-    <div className='flex-wrap justify-center'>
+    <div className='flex-wrap justify-center items-center h-screen'>
         <div className='singleCard w-[250px] h-[590px] bg-[#FFFED3] p-5 rounded-lg'>
             <div className='productImage w-full h-[130px] overflow-hidden'>
                 <img className='w-full h-full' src={data.image_link} alt="" />

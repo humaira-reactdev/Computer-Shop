@@ -42,7 +42,7 @@ const Home = () => {
                         <img className='w-full h-full' src={item.image_link} alt="" />
                     </div>
                     <div className='product_text'>
-                        <h2 className='text-[18px] font-semibold text-black mt-5 mb-5'>{item.product_title}</h2>
+                        <h2 className='text-[18px] font-semibold text-black mt-5 mb-5 truncate'>{item.product_title}</h2>
                         <ul className='list-desc p-5'>
                             <li>{item.brand}</li>
                             <li>{item.processor}</li>
