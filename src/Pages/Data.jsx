@@ -36,8 +36,8 @@ const Data = () => {
                         </ul>
                         <div className='flex gap-10'>
                             <h2 className='text-3xl font-bold italic mt-5 text-[#FFA62F]'>Price: {data.price}</h2>
-                            <button onClick={handleBuy} className='bg-[#402E7A] font-semibold text-white p-3 rounded-lg'>Buy now</button>
-                            <button onClick={handleSeeMore} className='bg-[#402E7A] font-semibold text-white p-3 rounded-lg'>See more products</button>
+                            <button onClick={handleBuy} className='bg-[#402E7A] font-semibold text-white p-3 rounded-lg hover:bg-[#E8C5E5]'>Buy now</button>
+                            <button onClick={handleSeeMore} className='bg-[#402E7A] font-semibold text-white p-3 rounded-lg hover:bg-[#E8C5E5]'>See more products</button>
                         </div>
                         
                     </div>
